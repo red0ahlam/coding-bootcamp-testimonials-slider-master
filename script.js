@@ -11,32 +11,6 @@ let slide = 0;
 
 let images = ["images/image-tanya.jpg","images/image-john.jpg"];
 
-// function changeText (slide,reviewers) {
-//     carouselImage.classList.remove('slidein');
-//     carouselImage.classList.remove('slideout');
-
-//     carouselImage.classList.add('slidein');
-//     carouselText.classList.add('opacity-zero');
-//     carouselImage.addEventListener('animationend', ()=> {
-//         carouselImage.classList.remove('slidein');
-//         carouselImage.classList.add('slideout');
-//     },{once: true});
-//     setTimeout(()=> {
-//         review.innerHTML = ` “ ${reviewers[slide].review} ”` ;
-//         reviewerName.innerHTML = reviewers[slide].name;
-//         reviewerJob.innerHTML = reviewers[slide].job;
-//         reviewerImage.setAttribute('src',images[slide]);
-//         carouselText.classList.remove('opacity-zero');
-//     },"750");
-//     setTimeout(() => {
-//         carouselImage.addEventListener('animationend', ()=> {
-//             carouselImage.classList.remove('slideout');
-//         },{once: true});
-//     }, 800);
-    
-// };
-
-
 function animate (animated,animation,duration) {
     animated.classList.add(animation);
     setTimeout(()=> {
