@@ -288,12 +288,10 @@ main {
 
 .reviewer-name {
     font-family: var(--ff-name);
-    font-size: 18px;
 }
 
 .reviewer-job {
     font-family: var(--ff-job);
-    font-size: 18px;
     color: var(--clr-Grayish-Blue);
 }
 
@@ -302,6 +300,7 @@ main {
     flex-direction: column;
     gap: .5rem;
     align-items: center;
+    font-size: clamp(15px, calc(1vw+1px) ,18px);
 }
 
 @media ( min-width: 800px) {
