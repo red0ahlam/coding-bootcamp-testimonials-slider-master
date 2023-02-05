@@ -300,7 +300,7 @@ main {
     flex-direction: column;
     gap: .5rem;
     align-items: center;
-    font-size: clamp(15px, calc(1vw+1px) ,18px);
+    font-size: clamp(15px, calc(1.5vw+1px) ,18px);
 }
 
 @media ( min-width: 800px) {
