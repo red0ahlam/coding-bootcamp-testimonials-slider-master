@@ -1,0 +1,374 @@
+
+@font-face {
+    font-family: "inter-light";
+    src: url("fonts/Inter-Light.ttf");
+}
+
+@font-face {
+    font-family: "inter-medium";
+    src: url("fonts/Inter-Medium.ttf");
+}
+
+@font-face {
+    font-family: "inter-bold";
+    src: url("fonts/Inter-Bold.ttf");
+}
+
+
+:root {
+
+    --clr-Dark-Blue: hsl(240, 38%, 20%);
+    --clr-Grayish-Blue: hsl(240, 18%, 77%);
+
+    --ff-body: "inter-light";
+    --ff-name: "inter-bold";
+    --ff-job: "inter-medium";
+}
+
+
+/*-----------reset-------------*/
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font: inherit;
+}
+
+html,
+body {
+    height: 100%;
+    min-height: 100%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    line-height: 1.4;
+}
+
+picture, img, svg {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+      scroll-behavior: auto;
+    }
+  
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+/*------------layout-------------*/
+
+body {
+    font-size: 20px;
+    font-family: var(--ff-body);
+    color: var(--clr-Dark-Blue);
+}
+
+@media (min-width: 450px) {
+    body {
+        font-size: 23px;
+    }
+}
+
+@media (min-width: 800px) {
+    body {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 900px) {
+    body {
+        font-size: 23px;
+    }
+}
+
+@media (min-width: 1000px) {
+    body {
+        font-size: 26px;
+    }
+}
+
+@media (min-width: 1100px) {
+    body {
+        font-size: 30px;
+    }
+
+    .carousel {
+        padding-top: 3.5em;
+    }
+}
+
+@media (min-width: 1300px) {
+    body {
+        font-size: 32px;
+    }
+}
+
+.visually-hidden {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+}
+
+.container {
+    --max-width: 1100px;
+    --padding: 1.5rem;
+
+    width: min(var(--max-width), calc( 100% - var(--padding)*2));
+    margin-inline: auto;
+}
+
+.flow >*:not(:last-child) {
+    margin-bottom: var(--gap,1rem);
+}
+
+/*-------------------layout-----------------*/
+
+main {
+    background-image: url("images/pattern-curve.svg");
+    background-position: bottom left;
+    background-repeat: no-repeat;
+}
+
+main {
+    padding: 4em 0;
+}
+
+@media (min-width: 800px) {
+    main {
+        padding: 2.5em;
+    }
+}
+
+@media (min-width: 1100px) {
+    main {
+        padding-top: 0;
+        padding-bottom: 4.5em;
+    }
+}
+
+@media( min-width: 800px) {
+    .carousel {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .carousel-visual {
+        grid-column: 2/-1;
+    }
+
+    .carousel-text {
+        position: relative;
+        z-index: 2;
+        grid-row: 1/2;
+        display: grid;
+        place-content: center;
+        width: 115%;
+    }
+}
+
+.carousel-visual {
+    position: relative;
+}
+
+.carousel-image {
+    position: relative;
+    overflow: visible;
+    max-width: 25rem;
+    margin-inline: auto;
+    height: fit-content;
+}
+
+@media( min-width: 900px) {
+    .carousel-image {
+        max-width: 30rem;
+    }
+}
+
+@media( min-width: 1200px) {
+    .carousel-image {
+        max-width: 34rem;
+    }
+}
+
+.reviewer-bg {
+    position: absolute;
+    z-index: 1;
+    transform: scale(1.25);
+}
+
+.reviewer-img {
+    position: relative;
+    z-index: 2;
+}
+
+.carousel-controls {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,50%);
+    z-index: 3;
+    display: flex;
+    border-radius: 3rem;
+    overflow: hidden;
+    box-shadow: 0 0 2rem 1rem rgba(0, 0, 0, 0.178);
+    background-color: white;
+    width: 7rem;
+}
+
+.button {
+    width: 100%;
+    padding: .75em 0.5em;
+    background-color: white;
+}
+
+.button--left {
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+}
+
+.button--right {
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+}
+
+.button:focus-visible {
+    border: 4px dotted rgb(65, 11, 109);
+}
+
+:focus {
+    outline: 0;
+}
+
+@media (min-width: 800px) {
+    .carousel-controls {
+        left: 22%;
+    }
+
+    .button {
+        padding: .55em; 
+    }
+}
+
+.button img {
+    margin-inline: auto;
+}
+
+
+/*------------info------------*/
+
+.carousel-text {
+    --gap: 2rem;
+}
+
+.reviewer-name {
+    font-family: var(--ff-name);
+    font-size: 18px;
+}
+
+.reviewer-job {
+    font-family: var(--ff-job);
+    font-size: 18px;
+    color: var(--clr-Grayish-Blue);
+}
+
+.reviewer-info {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+}
+
+@media ( min-width: 800px) {
+    .reviewer-info {
+        flex-direction: row;
+        gap: .5rem;
+    }
+}
+
+.paragraph {
+    text-align: center;
+    max-width: 30rem;
+    margin-inline: auto;
+}
+
+.pattern {
+    margin-inline: auto;
+    transform: translateY(55%) scale(0.5);
+}
+
+@media (min-width: 800px) {
+
+    .paragraph {
+        text-align: start;
+        margin-inline: 0;
+        max-width: 100%;
+    }
+
+    .pattern {
+        transform: translateY(40%);
+        margin-inline: 0;
+        margin-left: 6rem;
+    }
+}
+
+.opacity-zero {
+    animation-name: opacityZero;
+    animation-duration: 400ms;
+    animation-timing-function: linear;
+}
+
+.scaleup {
+    animation-name: scaleup;
+    animation-duration: 400ms;
+    animation-timing-function: linear;
+}
+
+@keyframes opacityZero {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: .7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleup {
+    0% {
+        transform: scale(.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
